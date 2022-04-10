@@ -3,7 +3,6 @@ window.onload = () => {
   populateProducts();
 };
 
-
 // SE POPULA EL SELECT DINAMICAMENTE CON PRODUCTOS PROVENIENTES DEL ARRAY EN ARRAY.JS
 const populateProducts = () => {
   const products = document.getElementById("productList");
