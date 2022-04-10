@@ -1,7 +1,29 @@
+// SE POPULA EL SELECT ANTES DE QUE CARGUE LA PAGINA
+window.onload = () => {
+  populateProducts();
+};
+
+
+// SE POPULA EL SELECT DINAMICAMENTE CON PRODUCTOS PROVENIENTES DEL ARRAY EN ARRAY.JS
+const populateProducts = () => {
+  const products = document.getElementById("productList");
+  productos.forEach(producto => {
+      const option = document.createElement("option");
+      option.value = producto.id;
+      option.innerText = producto.nombre;
+      products.appendChild(option);
+  });
+};
+const valueList = document.getElementById("productList").value;
+const getElementOfList = () => {
+      const nombres= productos.filter((name) =>name.id === valueList);
+      console.log(nombres);
+}
 
 function loadoven() {
-    
-  let tmold=Number(prompt("el molde tiene 4 cavidades o 5?"));
+  
+  let tmold=document.getElementById("productList").value;
+  console.log("tmold ", tmold)
   let blow=Number(prompt("a cuantos golpes va la divisora?"));
   let time=Number(prompt("cuanto es el tiempo de horneo"));
   let loader= parseInt(((blow/tmold)*time)/32);
@@ -36,21 +58,4 @@ const resumeProducts = () => {
 const nombres= productos.map((name) =>name.nombre);
 console.log(nombres);
 //alert(` Los productos para elegir son: \n ${nombres} `)
-}
-
-// Recibo por parámetro el array
-function productListByHTML(productos) {
-  // contenedor asignado
-  let contenedor = document.getElementById("mold");
-
-  // Recorremos el array y por cada item para el option
-  for (const producto of productos) {
-    // contenedor individual
-    let option = document.createElement("option");
-
-    option.innerHTML = `<option value=${produto.mold}>${prodcuto.name}</option>`;
-
-    //agregamos al contenedor  desde el HTML
-    contenedor.appendChild(option);
-  }
 }
